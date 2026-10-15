@@ -28,7 +28,7 @@
             "title_size": "large",
             "title_margin_bottom": 0,
             "content_max_width": 500,
-            "block_padding_horizontal": 30,
+            "block_padding_horizontal": 0,
             "block_padding_vertical": 10,
             "block_width_phone": "100%"
           },
@@ -54,7 +54,6 @@
           "type": "advisor",
           "name": "Advisor",
           "settings": {
-            "media": "shopify://shop_images/Home-PT-asset_1200x_ed7b4dca-cfba-41f3-836e-8dfab8814653.png",
             "content": "",
             "btn_text": "BEKIJK VACATURE",
             "btn_url": "",
@@ -81,7 +80,6 @@
           "type": "advisor",
           "name": "Advisor",
           "settings": {
-            "media": "shopify://shop_images/Mask_group_1200x_5bcf56d4-440f-40f0-941d-a62cb5275d75.png",
             "content": "",
             "btn_text": "BEKIJK VACATURE",
             "btn_url": "",
@@ -184,7 +182,6 @@
               "type": "_bicyle",
               "name": "Bicycle",
               "settings": {
-                "image": "shopify://shop_images/Peeters_Tweewielers_sRGB-39_1.png",
                 "title": "E-bikes",
                 "link": ""
               },
@@ -194,7 +191,6 @@
               "type": "_bicyle",
               "name": "Bicycle",
               "settings": {
-                "image": "shopify://shop_images/Peeters_Tweewielers_sRGB-39_1.png",
                 "title": "E-bikes",
                 "link": ""
               },
@@ -233,7 +229,6 @@
               "type": "_bicyle",
               "name": "Bicycle",
               "settings": {
-                "image": "shopify://shop_images/Peeters_Tweewielers_sRGB-39_1.png",
                 "title": "E-bikes",
                 "link": ""
               },
@@ -243,7 +238,6 @@
               "type": "_bicyle",
               "name": "Bicycle",
               "settings": {
-                "image": "shopify://shop_images/Peeters_Tweewielers_sRGB-39_1.png",
                 "title": "E-bikes",
                 "link": ""
               },
@@ -253,7 +247,6 @@
               "type": "_bicyle",
               "name": "Bicycle",
               "settings": {
-                "image": "shopify://shop_images/Peeters_Tweewielers_sRGB-39_1.png",
                 "title": "E-bikes",
                 "link": ""
               },
@@ -263,7 +256,6 @@
               "type": "_bicyle",
               "name": "Bicycle",
               "settings": {
-                "image": "shopify://shop_images/Peeters_Tweewielers_sRGB-39_1.png",
                 "title": "E-bikes",
                 "link": "shopify://collections"
               },
@@ -273,7 +265,6 @@
               "type": "_bicyle",
               "name": "Bicycle",
               "settings": {
-                "image": "shopify://shop_images/Peeters_Tweewielers_sRGB-39_1.png",
                 "title": "E-bikes",
                 "link": ""
               },
@@ -283,7 +274,6 @@
               "type": "_bicyle",
               "name": "Bicycle",
               "settings": {
-                "image": "shopify://shop_images/Peeters_Tweewielers_sRGB-39_1.png",
                 "title": "E-bikes",
                 "link": ""
               },
@@ -373,7 +363,6 @@
               "type": "_bicyle",
               "name": "Bicycle",
               "settings": {
-                "image": "shopify://shop_images/Peeters_Tweewielers_sRGB-39_1.png",
                 "title": "E-bikes",
                 "link": ""
               },
@@ -383,7 +372,6 @@
               "type": "_bicyle",
               "name": "Bicycle",
               "settings": {
-                "image": "shopify://shop_images/Peeters_Tweewielers_sRGB-39_1.png",
                 "title": "E-bikes",
                 "link": ""
               },
@@ -393,7 +381,6 @@
               "type": "_bicyle",
               "name": "Bicycle",
               "settings": {
-                "image": "shopify://shop_images/Peeters_Tweewielers_sRGB-39_1.png",
                 "title": "E-bikes",
                 "link": ""
               },
@@ -403,7 +390,6 @@
               "type": "_bicyle",
               "name": "Bicycle",
               "settings": {
-                "image": "shopify://shop_images/Peeters_Tweewielers_sRGB-39_1.png",
                 "title": "E-bikes",
                 "link": ""
               },
@@ -413,7 +399,6 @@
               "type": "_bicyle",
               "name": "Bicycle",
               "settings": {
-                "image": "shopify://shop_images/Peeters_Tweewielers_sRGB-39_1.png",
                 "title": "E-bikes",
                 "link": ""
               },
@@ -454,7 +439,6 @@
               "type": "_bicyle",
               "name": "Bicycle",
               "settings": {
-                "image": "shopify://shop_images/Peeters_Tweewielers_sRGB-39_1.png",
                 "title": "E-bikes",
                 "link": ""
               },
@@ -464,7 +448,6 @@
               "type": "_bicyle",
               "name": "Bicycle",
               "settings": {
-                "image": "shopify://shop_images/Peeters_Tweewielers_sRGB-39_1.png",
                 "title": "E-bikes",
                 "link": ""
               },
@@ -474,7 +457,6 @@
               "type": "_bicyle",
               "name": "Bicycle",
               "settings": {
-                "image": "shopify://shop_images/Peeters_Tweewielers_sRGB-39_1.png",
                 "title": "E-bikes",
                 "link": ""
               },
@@ -484,7 +466,6 @@
               "type": "_bicyle",
               "name": "Bicycle",
               "settings": {
-                "image": "shopify://shop_images/Peeters_Tweewielers_sRGB-39_1.png",
                 "title": "E-bikes",
                 "link": "shopify://collections"
               },
@@ -494,7 +475,6 @@
               "type": "_bicyle",
               "name": "Bicycle",
               "settings": {
-                "image": "shopify://shop_images/Peeters_Tweewielers_sRGB-39_1.png",
                 "title": "E-bikes",
                 "link": ""
               },
@@ -504,7 +484,6 @@
               "type": "_bicyle",
               "name": "Bicycle",
               "settings": {
-                "image": "shopify://shop_images/Peeters_Tweewielers_sRGB-39_1.png",
                 "title": "E-bikes",
                 "link": ""
               },
@@ -573,7 +552,6 @@
           "type": "media",
           "name": "Media",
           "settings": {
-            "media": "shopify://shop_images/Peeters_Tweewielers_sRGB-18_2.png",
             "btn_url": "",
             "block_width": "50%",
             "radius_top_left": 500,
@@ -631,7 +609,6 @@
             "btn_text": "",
             "btn_url": "",
             "btn_style": "filled",
-            "logo": "shopify://shop_images/Google_beeldmerk_1_2.png",
             "review_text": "Gebaseerd op <strong>175+ reviews</strong>",
             "rating": 4.5,
             "block_width": "100%",
@@ -802,17 +779,13 @@
             "best_seller_tJJ9dx": {
               "type": "_best-seller",
               "name": "Best Seller",
-              "settings": {
-                "image": "shopify://shop_images/Flow_dames_Edit_1.png"
-              },
+              "settings": {},
               "blocks": {}
             },
             "best_seller_xq9pKz": {
               "type": "_best-seller",
               "name": "Best Seller",
-              "settings": {
-                "image": "shopify://shop_images/Flow_dames_Edit_1.png"
-              },
+              "settings": {},
               "blocks": {}
             },
             "best_seller_content_g9VFmf": {
@@ -882,41 +855,31 @@
             "best_seller_rnb4E9": {
               "type": "_best-seller",
               "name": "Best Seller",
-              "settings": {
-                "image": "shopify://shop_images/Flow_dames_Edit_1.png"
-              },
+              "settings": {},
               "blocks": {}
             },
             "best_seller_QeUeUK": {
               "type": "_best-seller",
               "name": "Best Seller",
-              "settings": {
-                "image": "shopify://shop_images/Flow_dames_Edit_1.png"
-              },
+              "settings": {},
               "blocks": {}
             },
             "best_seller_LmVnnW": {
               "type": "_best-seller",
               "name": "Best Seller",
-              "settings": {
-                "image": "shopify://shop_images/Flow_dames_Edit_1.png"
-              },
+              "settings": {},
               "blocks": {}
             },
             "best_seller_dQq8BB": {
               "type": "_best-seller",
               "name": "Best Seller",
-              "settings": {
-                "image": "shopify://shop_images/Flow_dames_Edit_1.png"
-              },
+              "settings": {},
               "blocks": {}
             },
             "best-seller": {
               "type": "_best-seller",
               "static": true,
-              "settings": {
-                "image": "shopify://shop_images/Flow_dames_Edit_1.png"
-              },
+              "settings": {},
               "blocks": {}
             }
           },
@@ -962,7 +925,6 @@
         "bicycle_info_xFgPUQ": {
           "type": "bicycle_info",
           "settings": {
-            "image": "shopify://shop_images/Flow_dames_Edit_1.png",
             "title": "RIH MOVENDA",
             "link": "wielerkleding-actie-in-heel",
             "feature_01": "Bosch Active\nLine Plus",
@@ -976,7 +938,6 @@
         "bicycle_info_C7b6iQ": {
           "type": "bicycle_info",
           "settings": {
-            "image": "shopify://shop_images/Flow_dames_Edit_1.png",
             "title": "RIH MOVENDA",
             "link": "wielerkleding-actie-in-heel",
             "feature_01": "Bosch Active\nLine Plus",
@@ -990,7 +951,6 @@
         "bicycle_info_VyRCJw": {
           "type": "bicycle_info",
           "settings": {
-            "image": "shopify://shop_images/Flow_dames_Edit_1.png",
             "title": "RIH MOVENDA",
             "link": "wielerkleding-actie-in-heel",
             "feature_01": "Bosch Active\nLine Plus",
@@ -1004,7 +964,6 @@
         "bicycle_info_aRg7ik": {
           "type": "bicycle_info",
           "settings": {
-            "image": "shopify://shop_images/Flow_dames_Edit_1.png",
             "title": "RIH MOVENDA",
             "link": "wielerkleding-actie-in-heel",
             "feature_01": "Bosch Active\nLine Plus",
@@ -1018,7 +977,6 @@
         "bicycle_info_bah6Ph": {
           "type": "bicycle_info",
           "settings": {
-            "image": "shopify://shop_images/Flow_dames_Edit_1.png",
             "title": "RIH MOVENDA",
             "link": "wielerkleding-actie-in-heel",
             "feature_01": "Bosch Active\nLine Plus",

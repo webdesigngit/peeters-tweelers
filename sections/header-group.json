@@ -55,7 +55,7 @@
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
-        "menu": "home",
+        "menu": "",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
@@ -77,7 +77,6 @@
           "settings": {
             "item_name": "big SALE",
             "title": "Waar ben je naar op zoek?",
-            "media_01": "shopify://shop_images/Mask_group_1_7475c019-edd8-4bf7-b5d3-5591335ef60d.png",
             "btn_text_01": "ADVIESGESPREK",
             "btn_url_01": "shopify://products/hello-copy-copy",
             "btn_text_02": "ADVIESGESPREK",
@@ -92,7 +91,6 @@
           "settings": {
             "item_name": "Tweedehands",
             "title": "Waar ben je naar op zoek?",
-            "media_01": "shopify://shop_images/Mask_group_1_7475c019-edd8-4bf7-b5d3-5591335ef60d.png",
             "btn_text_01": "ADVIESGESPREK",
             "btn_url_01": "shopify://products/hello-copy-copy",
             "btn_text_02": "ADVIESGESPREK",
@@ -121,8 +119,7 @@
         "icon_menu_yHAg7g"
       ],
       "settings": {
-        "menu": "home",
-        "logo": "shopify://shop_images/logo-peeterstweewielers_1_5f28f6b7-2c48-4017-8330-1e365d8ab9f2.svg",
+        "menu": "main-menu",
         "logo_height": 80,
         "color_scheme": "scheme-3",
         "color_scheme_01": "scheme-3"
