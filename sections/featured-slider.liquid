@@ -1,0 +1,618 @@
+{{ 'featured-slider.css' | asset_url | stylesheet_tag }}
+
+{% render 'featured-slider' %}
+
+
+{%  schema  %} 
+{
+    "class": "featured-slider",
+    "name": "Featured Slider",
+    "tag": "section",
+    "blocks": [
+         {
+            "type": "video_slider",
+            "name":"Video Slider", 
+            "settings": [
+
+            {
+                "type": "select",
+                "options": [
+                    {"value": "hosted","label": "Hosted"},
+                    {"value": "youtubevimeo","label": "Youtube or vimeo"}
+                ],
+                "default":"hosted",
+                "label": "Select video type",
+                "id": "videotype"
+            },
+                {
+                    "type": "video",
+                    "id": "video",
+                    "label": "Hosted Video",
+                    "visible_if": "{{ block.settings.videotype == 'hosted' }}"
+                },
+                {
+                    "type": "video_url",
+                    "accept": ["vimeo","youtube"],
+                    "id": "video_url",
+                    "label": "Video",
+                    "info": "Add link of Youtube or Vimeo",
+                    "visible_if": "{{ block.settings.videotype == 'youtubevimeo' }}"
+                },
+                {
+                    "type": "checkbox",
+                    "label": "Customize Video Option",
+                    "id": "videooption",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "loop",
+                    "label": "Loop",
+                    "default": true,
+                    "visible_if": "{{ block.settings.videooption == true }}"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "autoplay",
+                    "label": "Autoplay",
+                    "default": true,
+                    "visible_if": "{{ block.settings.videooption == true }}"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "control",
+                    "label": "Control",
+                    "default": false,
+                    "visible_if": "{{ block.settings.videooption == true }}"
+                }, 
+                {
+                    "type": "checkbox",
+                    "id": "mute",
+                    "label": "Muted",
+                    "default": true,
+                    "visible_if": "{{ block.settings.videooption == true }}" 
+                
+                },
+ 
+
+                {
+                    "type": "text",
+                    "label": "Sub Title",
+                    "id": "subtitle",
+                    "default":"VACATURE"
+                },
+                {
+                    "type": "text",
+                    "label": "Title",
+                    "id": "title",
+                    "default":"Wij zoeken een ervaren fietsmonteur!"
+                },
+                {
+                    "type": "range",
+                    "id": "title_max_width",
+                    "label": "Max Width",
+                    "min": 400,
+                    "max": 1000,
+                    "unit": "px",
+                    "step": 10,
+                    "default": 700 
+                }, 
+                {
+                    "type": "textarea",
+                    "label": "Content",
+                    "id": "content",
+                    "default":"Heb jij net zo’n passie voor fietsen als wij en heb je ervaring in het onderhouden, repareren en afstellen van diverse fietsen? Bekijk dan onze vacature en wie weet tot snel!"
+                },
+                {
+                    "type": "range",
+                    "id": "content_max_width",
+                    "label": "Max Width",
+                    "min": 400,
+                    "max": 1000,
+                    "unit": "px",
+                    "step": 10,
+                    "default": 500 
+                }, 
+                 
+                {
+                    "type": "text",
+                    "id":"btn_text",
+                    "label": "Button Text",
+                    "default":"BEKIJK VACATURE"
+                },
+                {
+                    "type": "url",
+                    "label": "Button Link",
+                    "id": "btn_url"
+                },
+                 
+                {
+                    "type": "color_scheme",
+                    "id": "color_scheme",
+                    "label": "Slide Color",
+                    "default": "scheme-5"
+                } ,
+                {
+                    "type":"header",
+                    "content": "Phone Style"
+                },
+                {
+                    "type": "select",
+                    "id": "slide_style",
+                    "label": "Slide Style",
+                    "options": [
+                        {"label":"Media + Content ", "value": "mediacontent"},
+                        {"label":"Content + Media", "value": "contentmedia"}
+                    ],
+                    "default":"mediacontent"
+                }
+
+            ]
+        },
+        {
+            "type": "product_slider",
+            "name":"Product Slider",
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "Select Product"
+                },
+
+                {
+                    "type": "image_picker",
+                    "id": "media",
+                    "label": "Media" 
+                },
+                {
+                    "type": "image_picker",
+                    "id": "media_phone",
+                    "label": "Media for Phone" 
+                },
+
+                {
+                    "type": "text",
+                    "label": "Sub Title",
+                    "id": "subtitle",
+                    "default":"VACATURE"
+                },
+                {
+                    "type": "text",
+                    "label": "Title",
+                    "id": "title" 
+                },
+                {
+                    "type": "range",
+                    "id": "title_max_width",
+                    "label": "Max Width",
+                    "min": 400,
+                    "max": 1000,
+                    "unit": "px",
+                    "step": 10,
+                    "default": 700 
+                }, 
+                {
+                    "type": "richtext",
+                    "label": "Content",
+                    "id": "content" 
+                },
+                {
+                    "type": "range",
+                    "id": "content_max_width",
+                    "label": "Max Width",
+                    "min": 400,
+                    "max": 1000,
+                    "unit": "px",
+                    "step": 10,
+                    "default": 500 
+                }, 
+                {
+                    "type": "text",
+                    "label": "Bottom Text",
+                    "id": "bottomtext" 
+                },
+                {
+                    "type": "text",
+                    "id":"btn_text",
+                    "label": "Button Text",
+                    "default":"BEKIJK VACATURE"
+                },
+                {
+                    "type": "url",
+                    "label": "Button Link",
+                    "id": "btn_url"
+                },
+                 
+                {
+                    "type": "checkbox",
+                    "id":"badge",
+                    "label": "Add Badge",
+                    "default": false
+                },
+                {
+                    "type": "image_picker",
+                    "id": "badge_image",
+                    "label": "Badge Image",
+                    "visible_if": "{{ block.settings.badge == true }}"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "badge_text",
+                    "label": "Text",
+                    "visible_if": "{{ block.settings.badge == true }}",
+                    "default":"GRATIS KINDERZITJE + GOUD PAKKET T.W.V. €225"
+                },
+                {
+                    "type": "range",
+                    "id": "badge_width",
+                    "label": "Badge Width",
+                    "min": 0,
+                    "max": 300,
+                    "unit": "px",
+                    "step": 4,
+                    "default": 240,
+                    "visible_if": "{{ block.settings.badge == true }}"
+                }, 
+                {
+                    "type": "range",
+                    "id": "vertical",
+                    "label": "Vertical Position",
+                    "min": 0,
+                    "max": 100,
+                    "unit": "%",
+                    "step": 1,
+                    "default": 100,
+                    "visible_if": "{{ block.settings.badge == true }}"
+                }, 
+                {
+                    "type": "range",
+                    "id": "horizontal",
+                    "label": "Horizontal Position",
+                    "min": 0,
+                    "max": 100,
+                    "unit": "%",
+                    "step": 1,
+                    "default": 50,
+                    "visible_if": "{{ block.settings.badge == true }}"
+                }, 
+                {
+                    "type": "header",
+                    "content":"Mobile Badge Style"
+                },
+                {
+                    "type": "range",
+                    "id": "badge_width_phone",
+                    "label": "Badge Width",
+                    "min": 0,
+                    "max": 300,
+                    "unit": "px",
+                    "step": 4,
+                    "default": 200,
+                    "visible_if": "{{ block.settings.badge == true }}"
+                }, 
+                {
+                    "type": "range",
+                    "id": "vertical_phone",
+                    "label": "Vertical Position",
+                    "min": 0,
+                    "max": 100,
+                    "unit": "%",
+                    "step": 1,
+                    "default": 100,
+                    "visible_if": "{{ block.settings.badge == true }}"
+                }, 
+                {
+                    "type": "range",
+                    "id": "horizontal_phone",
+                    "label": "Horizontal Position",
+                    "min": 0,
+                    "max": 100,
+                    "unit": "%",
+                    "step": 1,
+                    "default": 50,
+                    "visible_if": "{{ block.settings.badge == true }}"
+                }, 
+                {
+                    "type": "color_scheme",
+                    "id": "color_scheme",
+                    "label": "Slide Color",
+                    "default": "scheme-5"
+                } ,
+                {
+                    "type":"header",
+                    "content": "Phone Style"
+                },
+                {
+                    "type": "select",
+                    "id": "slide_style",
+                    "label": "Slide Style",
+                    "options": [
+                        {"label":"Media + Content ", "value": "mediacontent"},
+                        {"label":"Content + Media", "value": "contentmedia"}
+                    ],
+                    "default":"mediacontent"
+                }
+
+            ]
+        },
+        {
+            "type": "image_slider",
+            "name":"Image Slider", 
+            "settings": [
+
+                {
+                    "type": "image_picker",
+                    "id": "media",
+                    "label": "Media"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "media_phone",
+                    "label": "Media"
+                },
+
+                {
+                    "type": "text",
+                    "label": "Sub Title",
+                    "id": "subtitle",
+                    "default":"VACATURE"
+                },
+                {
+                    "type": "text",
+                    "label": "Title",
+                    "id": "title",
+                    "default":"Wij zoeken een ervaren fietsmonteur!"
+                },
+                {
+                    "type": "range",
+                    "id": "title_max_width",
+                    "label": "Max Width",
+                    "min": 400,
+                    "max": 1000,
+                    "unit": "px",
+                    "step": 10,
+                    "default": 700 
+                }, 
+                {
+                    "type": "textarea",
+                    "label": "Content",
+                    "id": "content",
+                    "default":"Heb jij net zo’n passie voor fietsen als wij en heb je ervaring in het onderhouden, repareren en afstellen van diverse fietsen? Bekijk dan onze vacature en wie weet tot snel!"
+                },
+                {
+                    "type": "range",
+                    "id": "content_max_width",
+                    "label": "Max Width",
+                    "min": 400,
+                    "max": 1000,
+                    "unit": "px",
+                    "step": 10,
+                    "default": 500 
+                }, 
+                {
+                    "type": "text",
+                    "label": "Bottom Text",
+                    "id": "bottomtext",
+                    "default":"*Zolang de voorraad strekt"
+                },
+                {
+                    "type": "text",
+                    "id":"btn_text",
+                    "label": "Button Text",
+                    "default":"BEKIJK VACATURE"
+                },
+                {
+                    "type": "url",
+                    "label": "Button Link",
+                    "id": "btn_url"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "icons",
+                    "label": "Add Group of Icons"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "icon_01",
+                    "label": "Icon",
+                    "visible_if": "{{ block.settings.icons == true }}"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "icon_02",
+                    "label": "Icon",
+                    "visible_if": "{{ block.settings.icons == true }}"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "icon_03",
+                    "label": "Icon",
+                    "visible_if": "{{ block.settings.icons == true }}"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "icon_04",
+                    "label": "Icon",
+                    "visible_if": "{{ block.settings.icons == true }}"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "icon_05",
+                    "label": "Icon",
+                    "visible_if": "{{ block.settings.icons == true }}"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "icon_06",
+                    "label": "Icon",
+                    "visible_if": "{{ block.settings.icons == true }}"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "icon_07",
+                    "label": "Icon",
+                    "visible_if": "{{ block.settings.icons == true }}"
+                },
+                {
+                    "type": "checkbox",
+                    "id":"badge",
+                    "label": "Add Badge",
+                    "default": false
+                },
+                {
+                    "type": "image_picker",
+                    "id": "badge_image",
+                    "label": "Badge Image",
+                    "visible_if": "{{ block.settings.badge == true }}"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "badge_text",
+                    "label": "Text",
+                    "visible_if": "{{ block.settings.badge == true }}",
+                    "default":"GRATIS KINDERZITJE + GOUD PAKKET T.W.V. €225"
+                },
+                {
+                    "type": "range",
+                    "id": "badge_width",
+                    "label": "Badge Width",
+                    "min": 0,
+                    "max": 300,
+                    "unit": "px",
+                    "step": 4,
+                    "default": 240,
+                    "visible_if": "{{ block.settings.badge == true }}"
+                }, 
+                {
+                    "type": "range",
+                    "id": "vertical",
+                    "label": "Vertical Position",
+                    "min": 0,
+                    "max": 100,
+                    "unit": "%",
+                    "step": 1,
+                    "default": 100,
+                    "visible_if": "{{ block.settings.badge == true }}"
+                }, 
+                {
+                    "type": "range",
+                    "id": "horizontal",
+                    "label": "Horizontal Position",
+                    "min": 0,
+                    "max": 100,
+                    "unit": "%",
+                    "step": 1,
+                    "default": 50,
+                    "visible_if": "{{ block.settings.badge == true }}"
+                }, 
+                {
+                    "type": "header",
+                    "content":"Mobile Badge Style"
+                },
+                {
+                    "type": "range",
+                    "id": "badge_width_phone",
+                    "label": "Badge Width",
+                    "min": 0,
+                    "max": 300,
+                    "unit": "px",
+                    "step": 4,
+                    "default": 200,
+                    "visible_if": "{{ block.settings.badge == true }}"
+                }, 
+                {
+                    "type": "range",
+                    "id": "vertical_phone",
+                    "label": "Vertical Position",
+                    "min": 0,
+                    "max": 100,
+                    "unit": "%",
+                    "step": 1,
+                    "default": 100,
+                    "visible_if": "{{ block.settings.badge == true }}"
+                }, 
+                {
+                    "type": "range",
+                    "id": "horizontal_phone",
+                    "label": "Horizontal Position",
+                    "min": 0,
+                    "max": 100,
+                    "unit": "%",
+                    "step": 1,
+                    "default": 50,
+                    "visible_if": "{{ block.settings.badge == true }}"
+                }, 
+                {
+                    "type": "color_scheme",
+                    "id": "color_scheme",
+                    "label": "Slide Color",
+                    "default": "scheme-5"
+                } ,
+                {
+                    "type":"header",
+                    "content": "Phone Style"
+                },
+                {
+                    "type": "select",
+                    "id": "slide_style",
+                    "label": "Slide Style",
+                    "options": [
+                        {"label":"Media + Content ", "value": "mediacontent"},
+                        {"label":"Content + Media", "value": "contentmedia"}
+                    ],
+                    "default":"mediacontent"
+                }
+
+            ]
+        }
+    ],
+    "settings": [
+        {
+            "type": "header",
+            "content": "Section Style"
+        },
+        {
+            "type": "text",
+            "default":"1603px",
+            "id": "layout_max_width",
+            "label": "Layout Max Width" 
+        },
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "label": "Section Color",
+            "default": "scheme-5"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "label": "Padding Top",
+            "min": 0,
+            "max": 100,
+            "unit": "px",
+            "step": 1,
+            "default": 20
+        },
+
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "label": "Padding Bottom",
+            "min": 0,
+            "max": 100,
+            "unit": "px",
+            "step": 1,
+            "default": 20
+        }
+    ],
+    "disabled_on": {
+        "groups": ["header","footer"]
+    },
+    "presets": [
+        {
+            "name": "Featured Slider"
+        }
+    ]
+
+}
+{% endschema %}

@@ -1,0 +1,251 @@
+.hero_banner{
+    position: relative;
+}
+.hero_banner::after {
+    content: "";
+    background: var(--bottom_bg_color);
+    height: 140px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+ 
+.hero_title{
+    max-width: var(--header_max_width);
+}
+.heroSliderLayout{
+     position: relative;
+     max-width: var(--slider-max-width);
+}
+
+.heroSliderLayout::after {
+    content: "";
+    background: linear-gradient(133.41deg, #000000 -67.71%, rgba(0, 0, 0, 0) 61%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 80%;
+    z-index: 1;
+}
+
+
+/* shadow */
+.heroSliderLayout::before {
+    /* background: #52B099; */
+    /* backdrop-filter: blur(150px); */
+    box-shadow:  var(--box-shadow);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    max-width: var(--slider-max-width);
+    z-index: 1;
+    border-top-right-radius: 400px;
+    border-bottom-right-radius: 400px;
+}
+
+.slide {}
+.slide .slide_image{
+    width: 100%; 
+    border-top-right-radius: var(--slide_radius);
+    border-bottom-right-radius: var(--slide_radius);
+    aspect-ratio: 1/var(--slide_ratio);
+    display: block;
+    object-fit: cover;
+    height: 100%;
+}
+
+.hero-banner-content{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.hero-banner-content .hero_content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.hero-banner-content .hero_content .hero_title{
+
+}
+.hero-banner-content .hero_content .hero_search{
+
+}
+
+.hero_search{}
+.hero_search ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    margin-bottom: 16px;
+}
+.hero_search ul li{}
+.hero_search ul li div{
+
+    background-color:rgba(var(--color-button), var(--alpha-button-background));
+        display: flex;
+    align-items: center;
+    padding: 13px 22px;
+    border-radius: 100px;
+    gap: 8px;
+
+}
+.hero_search ul li div img {
+    width: 18px;
+    height: auto;
+}
+.hero_search ul li div span{ 
+font-weight: 500; 
+font-size: 17px; 
+line-height: 90%;
+letter-spacing: 0%;
+text-align: center;
+
+}
+
+.appointment {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 60px;
+    z-index: 1;
+    position: relative;
+    padding-bottom: 10px;
+}
+.appointment_btn{
+
+    background-color:rgba(var(--color-foreground), 1);
+        display: flex;
+    align-items: center;
+    padding: 13px 22px;
+    border-radius: 10px;
+    gap: 8px;
+    color: rgb(var(--color-background));
+    box-shadow: 2px 2px 15px 0px #00000026;
+    text-decoration: none;
+
+}
+
+.appointment_btn svg {
+    width: 18px;
+    height: auto;
+}
+.appointment_btn span{ 
+font-weight: 500; 
+font-size: 17px; 
+line-height: 90%;
+letter-spacing: 0%;
+text-align: center;
+
+}
+
+/*
+Hero search Option 
+*/
+.hero-banner-search{
+
+}
+.hero-banner-search form{
+    display: flex;
+    background-color: #fff;
+    max-width: 1246px;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 100px;
+    padding: 25px 35px;
+}
+
+.hero-banner-search form .searchIcon{
+    width: 50px;
+}
+.hero-banner-search form input{ 
+font-weight: 600; 
+font-size: 25px; 
+line-height: 90%;
+letter-spacing: 0%;
+color: rgb(var(--color-background));
+    width: 100%;
+    border: 0;
+
+}
+.hero-banner-search form input::placeholder{
+
+color: rgb(var(--color-background));
+}
+.hero-banner-search form button{
+
+    /* background: rgb(var(--color-background));
+    background: var(--gradient-background); */
+    
+    color: rgb(var(--color-foreground)); 
+font-weight: 500; 
+font-size: 20px; 
+line-height: 90%;
+letter-spacing: 10%;
+padding: 17px 35px;
+border-radius: 100px;
+    flex-shrink: 0;
+    border: 0;
+    overflow: hidden;
+
+}
+
+@media(max-width: 767px){
+    .heroSliderLayout { 
+    width: calc( 100% - 15px );
+}
+    .hero_content{
+        padding: 25px 25px;
+    }
+    .hero-banner-search {
+    position: relative;
+    z-index: 1;
+}
+.hero-banner-search form .searchIcon {
+   display: none;
+}
+.hero-banner-search form { 
+    flex-direction: column;
+    height: auto;
+    padding:30px 30px;
+    border-radius: 25px;
+        gap: 25px;
+}
+.hero-banner-search form button {
+    background: rgb(var(--color-button)); 
+    color: rgb(var(--color-foreground));
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 90%;
+    letter-spacing: 10%;
+    padding: 17px 35px;
+    border-radius: 100px;
+    flex-shrink: 0;
+    border: 0;
+}
+.hero-banner-search form input,
+.hero-banner-search form input::placeholder { 
+    text-align: center;
+}
+ .hero_banner::after { 
+    height: 45%; 
+}
+.appointment { 
+    padding-right: 15px;  
+    padding-bottom: 0;
+    transform: translateY(-70px);
+}
+}

@@ -1,0 +1,18 @@
+ <div class="hero-banner-search">
+
+ <form action="{{ routes.search_url }}" method="get" >
+
+    <img src="{{ 'search-sm.svg' |  asset_url }}" alt="" class="searchIcon">
+
+    <input 
+        type="search"
+        placeholder="{{ placeholder }}"
+        value="{{ search.terms |  escape }}"
+        name="q"
+    > 
+
+  <button type="submit" class="btn"> <span>{{ search_btn_text }}</span> {% render 'icon-right-arrow' %} </button>
+ </form> 
+</div>
+
+ 

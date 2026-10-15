@@ -1,0 +1,137 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0"
+      ],
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "color_scheme": "",
+        "show_line_separator": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "cus_megamenu_3HQgPB": {
+          "type": "cus_megamenu",
+          "settings": {
+            "handle": "big sale",
+            "title": "Waar ben je naar op zoek?",
+            "link": "",
+            "linktext": "ADVIESGESPREK"
+          }
+        }
+      },
+      "block_order": [
+        "cus_megamenu_3HQgPB"
+      ],
+      "disabled": true,
+      "settings": {
+        "logo_position": "middle-left",
+        "mobile_logo_position": "center",
+        "menu": "home",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "scheme-3",
+        "menu_color_scheme": "scheme-2",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "enable_customer_avatar": false,
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "cusheader": {
+      "type": "cus-header",
+      "blocks": {
+        "icon_menu_r4e4wU": {
+          "type": "icon_menu",
+          "settings": {
+            "item_name": "big SALE",
+            "title": "Waar ben je naar op zoek?",
+            "media_01": "shopify://shop_images/Mask_group_1_7475c019-edd8-4bf7-b5d3-5591335ef60d.png",
+            "btn_text_01": "ADVIESGESPREK",
+            "btn_url_01": "shopify://products/hello-copy-copy",
+            "btn_text_02": "ADVIESGESPREK",
+            "btn_url_02": "shopify://collections/e-bike-copy",
+            "btn_text_03": "ADVIESGESPREK",
+            "btn_url_03": ""
+          }
+        },
+        "icon_menu_W8cDK3": {
+          "type": "icon_menu",
+          "disabled": true,
+          "settings": {
+            "item_name": "Tweedehands",
+            "title": "Waar ben je naar op zoek?",
+            "media_01": "shopify://shop_images/Mask_group_1_7475c019-edd8-4bf7-b5d3-5591335ef60d.png",
+            "btn_text_01": "ADVIESGESPREK",
+            "btn_url_01": "shopify://products/hello-copy-copy",
+            "btn_text_02": "ADVIESGESPREK",
+            "btn_url_02": "shopify://collections/e-bike-copy",
+            "btn_text_03": "ADVIESGESPREK",
+            "btn_url_03": ""
+          }
+        },
+        "icon_menu_yHAg7g": {
+          "type": "icon_menu",
+          "settings": {
+            "item_name": "",
+            "title": "Waar ben je naar op zoek?",
+            "btn_text_01": "",
+            "btn_url_01": "",
+            "btn_text_02": "",
+            "btn_url_02": "",
+            "btn_text_03": "",
+            "btn_url_03": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_menu_r4e4wU",
+        "icon_menu_W8cDK3",
+        "icon_menu_yHAg7g"
+      ],
+      "settings": {
+        "menu": "home",
+        "logo": "shopify://shop_images/logo-peeterstweewielers_1_5f28f6b7-2c48-4017-8330-1e365d8ab9f2.svg",
+        "logo_height": 80,
+        "color_scheme": "scheme-3",
+        "color_scheme_01": "scheme-3"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header",
+    "cusheader"
+  ]
+}

@@ -1,0 +1,355 @@
+{{ 'advisor.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+
+    assign media = block.settings.media 
+    assign content = block.settings.content
+    assign btn_text = block.settings.btn_text
+    assign btn_url = block.settings.btn_url
+    assign btn_style = block.settings.btn_style
+
+
+
+    assign block_width = block.settings.block_width
+
+    assign block_width_phone = block.settings.block_width_phone
+
+    assign color_scheme = block.settings.color_scheme 
+    assign content_max_width = block.settings.content_max_width 
+
+    assign border_radius = block.settings.border_radius
+    assign block_align = block.settings.block_align
+    assign content_text_align = block.settings.content_text_align
+
+    assign block_padding_horizontal = block.settings.block_padding_horizontal
+    assign block_padding_vertical = block.settings.block_padding_vertical
+    assign bg_color = block.settings.bg_color
+
+     
+    assign add_icon = block.settings.add_icon
+    assign icon_type = block.settings.icon_type
+    assign icon_image = block.settings.icon_image
+    assign icon_code = block.settings.icon_code
+    assign icon_style = block.settings.icon_style
+    assign icon_size = block.settings.icon_size
+
+%}
+
+{%  unless add_icon == false %}  
+    {%  capture advisor_icon %} 
+        
+        {% if icon_style == 'without_color' %}
+            <div class="icon_style " style="">
+
+            {% if icon_type == 'svg' %} 
+                {{icon_code}}
+            {% elsif icon_type == 'image' %} 
+                {% render 'media', media: icon_image %}
+            {% endif %} 
+
+            </div>
+        {% elsif icon_style == 'with_color' %}
+            <div class="icon_style color_icon" style=" ">
+                {% if icon_type == 'svg' %} 
+                    {{icon_code}}
+                {% elsif icon_type == 'image' %} 
+                    {% render 'media', media: icon_image %}
+                {% endif %}  
+            </div>
+        {% endif %}
+
+        
+
+    {% endcapture %} 
+{% endunless %}  
+ 
+{%  style  %}
+#shopify-block-{{ block.id }}.block-advisor{
+    --block_width : calc( {{block_width}} - var(--gap_horizontal)/2 ); 
+    --content_max_width : {{content_max_width}}px;
+    --border_radius: {{border_radius}}px;
+    --block_padding_horizontal : {{block_padding_horizontal}}px;
+    --block_padding_vertical : {{block_padding_vertical}}px;
+    --bg_color: {{bg_color}};
+    --block_align: {{block_align}};
+    --content_text_align: {{content_text_align}};
+    --icon-size:{{icon_size}}px;
+    --block_width_phone: {{block_width_phone}};
+
+    
+}
+{% endstyle %} 
+
+<div class=" advisor-style color-{{ color_scheme }} gradient">
+
+
+    <div class=" advisor-bg-color"></div>
+
+       <div class="advisor_media">
+         {% render 'media', media: media %}
+
+        {{ advisor_icon }}
+       </div>
+
+         
+    <div class="advisor-content-style">
+         {%  unless content == blank %} <div class="content">{{content}}</div>    {% endunless %}  
+
+         {% render 'btn', 
+            btn_text:btn_text, 
+            btn_url:btn_url, 
+            btn_style:btn_style  
+        %}
+    </div>
+</div>
+
+
+{%  schema  %}
+{
+    "name": "Advisor",
+    "class": "block-advisor",
+    "tag":"div", 
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "media",
+            "label": "Media"
+        },
+ 
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>"
+        }, 
+
+
+                 
+        {
+            "type": "text",
+            "id":"btn_text",
+            "label": "Button Text",
+            "default":"BEKIJK VACATURE"
+        },
+        {
+            "type": "url",
+            "label": "Button Link",
+            "id": "btn_url"
+        },
+        {
+            "type": "checkbox",
+            "id": "add_icon",
+            "label": "Add Icon",
+            "default": false
+        },
+        {
+            "type": "select",
+            "label": "Icon Type",
+            "options": [
+                {
+                    "value": "svg",
+                    "label": "Svg Code"
+                },
+                {
+                    "value": "image",
+                    "label":"Image"
+                }
+            ],
+            "id": "icon_type",
+            "default":"svg",
+            "visible_if": "{{ block.settings.add_icon == true }}"
+        },
+        {
+            "type": "image_picker",
+            "id": "icon_image",
+            "label": "Add Icon Image" ,
+            "visible_if": "{{ block.settings.icon_type == 'image' and block.settings.add_icon == true}}"
+
+        },
+        {
+            "type": "html",
+            "id": "icon_code",
+            "label": "Add SVG Icon" ,
+            "visible_if": "{{ block.settings.icon_type == 'svg' and block.settings.add_icon == true }}"
+
+        },
+        {
+            "type": "header",
+            "content": "Style"
+        } ,
+        {
+            "type": "select",
+            "label": "Icon Style",
+            "id": "icon_style",
+            "default":"without_color",
+            "options": [
+                {"value": "with_color","label": "With Color"},
+                {"value": "without_color","label": "Without Color"}
+            ] ,
+            "visible_if": "{{block.settings.add_icon == true }}"
+        },
+        {
+            "type": "range",
+            "label": "Icon Size",
+            "id": "icon_size",
+            "min": 30,
+            "max": 200, 
+            "unit": "px",
+            "step": 2,
+            "default": 50,
+            "visible_if": "{{block.settings.add_icon == true }}"
+        },
+        {
+            "type": "select",
+            "id": "btn_style",
+            "label": "Button Style",
+            "default":"filled",
+            "options": [
+                {
+                    "value": "filled",
+                    "label": "Filled"
+                },
+                {
+                    "value": "outline",
+                    "label": "Outline"
+                },
+                {
+                    "value": "linked",
+                    "label": "Linked"
+                }
+            ]
+        },
+        {
+            "type": "select",
+            "default": "flex-start",
+            "options": [
+                {"value": "flex-start","label": "Start"},
+                {"value": "center","label": "Center"},
+                {"value": "flex-end","label": "End"} 
+            ],
+            "id": "block_align",
+            "label": "Block ALignment"
+        },
+
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background Color",
+            "default":"#06123d"
+        },
+        
+         
+        {
+            "type": "select",
+            "id": "block_width",
+            "label": "Block Width",
+            "options": [
+                { "value": "20%", "label": "20%" },
+                { "value": "25%", "label": "25%" },
+                { "value": "33.33%", "label": "33.33%" },
+                { "value": "40%", "label": "40%" },
+                { "value": "50%", "label": "50%" },
+                { "value": "60%", "label": "60%" },
+                { "value": "66.66%", "label": "66.66%" },
+                { "value": "75%", "label": "75%" },
+                { "value": "80%", "label": "80%" },
+                { "value": "100%", "label": "100%" }
+            ],
+            "default":"100%"
+        },
+
+        {
+            "type": "range",
+            "id": "border_radius",
+            "label": "Border Radius",
+            "min": 0,
+            "max": 300,
+            "unit": "px",
+            "step": 5,
+            "default": 25 
+        },
+
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "label": "Slide Color",
+            "default": "scheme-1"
+        }, 
+
+
+        {
+            "type": "range",
+            "id": "content_max_width",
+            "label": "Content Max Width",
+            "min": 400,
+            "max": 1000,
+            "unit": "px",
+            "step": 10,
+            "default": 500 
+        },
+
+        {
+            "type": "select",
+            "default": "left",
+            "options": [
+                {"value": "left","label": "Left"},
+                {"value": "center","label": "Center"},
+                {"value": "right","label": "Right"} 
+            ],
+            "id": "content_text_align",
+            "label": "Text ALignment"
+        },
+
+       
+
+         {
+            "type": "range",
+            "id": "block_padding_horizontal",
+            "label": "Horizontal Padding",
+            "min": 0,
+            "max": 100,
+            "unit": "px",
+            "step": 10,
+            "default":30 
+        },
+         {
+            "type": "range",
+            "id": "block_padding_vertical",
+            "label": "Vertical Padding",
+            "min": 0,
+            "max": 100,
+            "unit": "px",
+            "step": 10,
+            "default":30 
+        },
+         {
+            "type": "header",
+            "content": "Mobile Responsive"
+        },
+         
+        {
+            "type": "select",
+            "id": "block_width_phone",
+            "label": "Block Width",
+            "options": [
+                { "value": "20%", "label": "20%" },
+                { "value": "25%", "label": "25%" },
+                { "value": "33.33%", "label": "33.33%" },
+                { "value": "40%", "label": "40%" },
+                { "value": "50%", "label": "50%" },
+                { "value": "60%", "label": "60%" },
+                { "value": "66.66%", "label": "66.66%" },
+                { "value": "75%", "label": "75%" },
+                { "value": "80%", "label": "80%" },
+                { "value": "100%", "label": "100%" }
+            ],
+            "default":"100%"
+        } 
+    ],
+    "presets": [
+        {
+            "name": "Advisor"
+        }
+    ]
+}
+{% endschema %}
